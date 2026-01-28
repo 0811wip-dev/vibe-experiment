@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>NeuroTechno Scanner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --tech-blue: #0033cc;
+        --tech-cyan: #00eaff;
+        --tech-grey: #bfbfbf;
+        --tech-dark: #1a1a1a;
+      }
+      body {
+        font-family: 'Space Grotesk', sans-serif;
+        background-color: var(--tech-grey);
+        color: var(--tech-blue);
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        cursor: crosshair;
+      }
+      .font-mono {
+        font-family: 'Space Mono', monospace;
+      }
+      
+      /* Technical Grid Background */
+      .tech-grid {
+        background-image: 
+          linear-gradient(var(--tech-blue) 0.5px, transparent 0.5px),
+          linear-gradient(90deg, var(--tech-blue) 0.5px, transparent 0.5px);
+        background-size: 40px 40px;
+        opacity: 0.05;
+      }
+
+      .cross-pattern {
+        background-image: radial-gradient(var(--tech-blue) 1px, transparent 1px);
+        background-size: 20px 20px;
+        opacity: 0.1;
+      }
+      
+      .btn-tech {
+        position: relative;
+        transition: all 0.2s ease;
+      }
+      .btn-tech::before, .btn-tech::after {
+        content: '';
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: var(--tech-blue);
+        transition: all 0.2s ease;
+      }
+      .btn-tech::before { top: -1px; left: -1px; }
+      .btn-tech::after { bottom: -1px; right: -1px; }
+      
+      .btn-tech:hover {
+        background: rgba(0, 51, 204, 0.05);
+        box-shadow: 0 0 15px rgba(0, 51, 204, 0.1);
+      }
+
+      /* Vertical Text Strip */
+      .v-text {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        transform: rotate(180deg);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "@mediapipe/tasks-vision": "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.3/+esm"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="antialiased min-h-screen selection:bg-[#0033cc] selection:text-white">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

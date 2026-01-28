@@ -1,0 +1,7 @@
+{
+  "name": "NeuroTechno Scanner",
+  "description": "Scan images to generate procedural techno tracks powered by Gemini AI. Analyzes visual vibes to synthesize rhythm and melody.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
